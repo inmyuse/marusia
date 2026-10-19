@@ -60,6 +60,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid currentColor; outline
 :root[data-theme='light'] .nav__pill { background: #eef0f4; }
 :root[data-theme='light'] .nav__row:not(.nav__row--blue) .nav__item:not([aria-current]):hover { color: #1d1d1d; }
 
+/* desktop: the hero text sits lower */
+@media (min-width: 901px) {
+  .hero__text { padding-top: calc(170 * var(--u)); }
+}
+
 /* ---------- Dots (blue sections only) ---------- */
 .dots {
   position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
@@ -88,7 +93,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid currentColor; outline
   padding: 110px var(--pad) 60px; overflow: hidden;
 }
 .hero__text, .security__text, .features__text { min-width: 0; }
-.hero h1 { font-size: clamp(44px, 5.2vw, 112px); line-height: 1.05; font-weight: 600; letter-spacing: -.03em; margin-bottom: 28px; overflow-wrap: anywhere; }
+.hero h1 { font-size: clamp(44px, 5.2vw, 112px); line-height: 1.05; font-weight: 800; letter-spacing: -.03em; margin-bottom: 28px; overflow-wrap: anywhere; }
 .hero__img { width: 100%; aspect-ratio: 638 / 538; position: relative; }
 .robot3d { position: absolute; inset: 0; }
 .robot3d canvas { touch-action: pan-y; }
