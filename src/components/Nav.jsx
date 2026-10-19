@@ -80,7 +80,8 @@ export default function Nav({ t }) {
   const go = (e, id) => {
     e.preventDefault();
     setActive(id);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById(id)?.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth' });
   };
 
   return (

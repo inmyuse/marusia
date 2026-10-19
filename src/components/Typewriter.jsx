@@ -23,6 +23,7 @@ export default function Typewriter({ phrases }) {
     }
     let current = 0;
     let shown = phrases[0];
+    setText(phrases[0]);
     let timer;
     const later = (fn, ms) => {
       timer = setTimeout(fn, ms);
@@ -89,8 +90,15 @@ export default function Typewriter({ phrases }) {
 
   return (
     <span className="typewriter">
-      <span>{text}</span>
-      <span className="typewriter__caret" aria-hidden="true" />
+      {phrases.map((phrase) => (
+        <span key={phrase} className="typewriter__reserve" aria-hidden="true">
+          {phrase}<span className="typewriter__caret" />
+        </span>
+      ))}
+      <span className="typewriter__live">
+        <span>{text}</span>
+        <span className="typewriter__caret" aria-hidden="true" />
+      </span>
     </span>
   );
 }
