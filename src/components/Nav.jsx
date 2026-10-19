@@ -6,7 +6,7 @@ import vector from '../assets/vector.svg';
 const Item = forwardRef(function Item({ item, ...props }, ref) {
   return (
     <a ref={ref} href={`#${item.id}`} className="nav__item" {...props}>
-      <span className="nav__icon" style={{ '--icon': `url(${item.icon})` }} aria-hidden="true" />
+      <span className="nav__icon" style={{ '--icon': `url("${item.icon}")` }} aria-hidden="true" />
       <span>{item.label}</span>
     </a>
   );
